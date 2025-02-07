@@ -4,8 +4,8 @@ import axios from 'axios';
 const API_URL = 'http://localhost:8080/task'; // Base URL of your Spring Boot backend
 
 // Get all tasks
-export const getTasks = async () => {
-  const response = await axios.get(API_URL);
+export const getTasks = async (searchQuery='') => {
+  const response = await axios.get(`${API_URL}?search=${searchQuery}`);
   return response.data;
 };
 
